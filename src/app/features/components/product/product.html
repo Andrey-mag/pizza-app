@@ -1,0 +1,32 @@
+<section class="product">
+  <div class="product__container container">
+    <h2 class="product__title">Выберите свою любимую пиццу</h2>
+    <div class="product__items">
+      @for (item of PRODUCTS_ITEMS(); track $index; let index = $index;) {
+      <div class="product__item">
+        <div class="product__item-img" (click)="showInfo(item)">
+          <img [src]="item.img" [alt]="`card-${index}`" />
+        </div>
+        <div class="product__item-info">
+          <h3 class="product__item-title">{{item.title}}</h3>
+          <p class="product__item-text">{{item.text}}</p>
+        </div>
+        <button class="button button__card">В корзину</button>
+      </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- Попап -->
+@if(showBigPizza()) {
+<div class="popup">
+  <div class="popup__content">
+    <h2>{{pizzaInfo().title}}</h2>
+    <div class="popup__img-block">
+      <img [src]="pizzaInfo().img" [alt]="'popUpPizza'" />
+    </div>
+    <button class="button button__main" (click)="closePopup()">OK</button>
+  </div>
+</div>
+}

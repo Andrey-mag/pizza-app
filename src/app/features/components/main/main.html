@@ -1,0 +1,27 @@
+<section class="main">
+  <div class="main__container container">
+    <div class="main__info-block">
+      <h1 class="main__title">
+        Самая вкусная пицца в мире <br />
+        <span>только rв Pizza Cheff</span>
+      </h1>
+      <div class="main__advantages-block">
+        @for (item of ADVANTAGES_CARDS(); track $index) {
+        <div class="advantages-card">
+          <div class="advantages-card__icon">
+            <img [src]="item.icon" [alt]="item.alt" />
+          </div>
+          <div class="advantages-card__right-side">
+            <h3 class="advantages-card__title">{{item.title}}</h3>
+            <div class="advantages-card__text">{{item.text}}</div>
+          </div>
+        </div>
+        }
+      </div>
+      <button class="button button__main">Выбрать пиццу</button>
+    </div>
+    <div class="main__image-block">
+      <img src="assets/images/pizza_big.png" alt="pizza_big" />
+    </div>
+  </div>
+</section>

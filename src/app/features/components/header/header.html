@@ -1,0 +1,28 @@
+<header class="header">
+  <div class="header__container container">
+    <div class="logo">
+      <img src="assets/icons/logo.svg" alt="logo" />
+    </div>
+    <div class="menu">
+      <ul class="nav">
+        @for (item of MENU_LIST(); track $index) {
+        <li class="nav__item">
+          <a class="nav__item-link" href="#">{{item}}</a>
+        </li>
+        }
+      </ul>
+    </div>
+
+    <div class="burger-menu" [class.burger-menu_active]="isBurgerMenuActive()">
+      <a href="#" class="burger-menu__button" (click)="toggleBurger()">
+        <span class="burger-menu__lines"></span>
+      </a>
+      <nav class="burger-menu__nav">
+        @for (item of MENU_LIST(); track $index) {
+        <a href="#" class="burger-menu__link">{{item}}</a>
+        }
+      </nav>
+      <div class="burger-menu__overlay"></div>
+    </div>
+  </div>
+</header>
