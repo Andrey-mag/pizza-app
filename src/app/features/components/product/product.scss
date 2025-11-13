@@ -46,9 +46,12 @@
   &__item-title {
     text-align: center;
     margin-bottom: 10px;
+    font-weight: 800;
   }
 
   &__item-text {
     text-align: center;
+    height: 52px;
+    margin-bottom: 10px;
   }
 }
